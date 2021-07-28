@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: tx-demo
+  datasource:
+    url: jdbc:mysql://10.10.66.154:3306/db_test?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: mysql_@bfp!#
