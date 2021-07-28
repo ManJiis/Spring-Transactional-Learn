@@ -1,31 +1,32 @@
 # Spring事务传播机制
-1. REQUIRED(Propagation.PROPAGATION_REQUIRED)
+1. REQUIRED(Propagation.REQUIRED) （Spring默认传播事务）
 
 支持当前事务，如果没有事务会创建一个新的事务
 
-2. SUPPORTS(Propagation.PROPAGATION_SUPPORTS)
+2. SUPPORTS(Propagation.SUPPORTS)
 
 支持当前事务，如果没有事务的话以非事务方式执行
 
-3. MANDATORY(Propagation.PROPAGATION_MANDATORY)
+3. MANDATORY(Propagation.MANDATORY)
 
 支持当前事务，如果没有事务抛出异常
 
-3. REQUIRES_NEW(Propagation.PROPAGATION_REQUIRES_NEW)
+3. REQUIRES_NEW(Propagation.REQUIRES_NEW)
 
 创建一个新的事务并挂起当前事务
 
-4. NOT_SUPPORTED(Propagation.PROPAGATION_NOT_SUPPORTED)
+4. NOT_SUPPORTED(Propagation.NOT_SUPPORTED)
 
 以非事务方式执行，如果当前存在事务则将当前事务挂起
 
-5.NEVER(Propagation.PROPAGATION_NEVER)
+5.NEVER(Propagation.NEVER)
 
 以非事务方式进行，如果存在事务则抛出异常
 
-6. NESTED(TransactionDefinition.PROPAGATION_NESTED)
+6. NESTED(TransactionDefinition.NESTED)
 
 如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。
+
 
 # 1. 问题一 (issue-one-)
 method_a 方法调用 method_b, 想要让 method_b 方法的事务先提交，方法有两种：
